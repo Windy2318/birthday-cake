@@ -1,2 +1,182 @@
-[InternetShortcut]
-URL=file:///c%3A/Users/SI/Saved%20Games/BirthdayCake.html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy Birthday!</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #253b3a;
+      --coral: #e87969;
+      --mint: #65a99b;
+      --yellow: #f4c95d;
+      --icing: #fff8e9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--ink);
+      background-color: #eef5ec;
+      background-image: radial-gradient(#bdd9c7 1px, transparent 1px);
+      background-size: 22px 22px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    main {
+      width: min(520px, 100vw);
+      padding: 30px 16px 22px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 38px;
+      font-weight: 700;
+    }
+
+    .wish {
+      margin: 8px 0 0;
+      color: #56706a;
+      font: 16px/1.4 "Trebuchet MS", sans-serif;
+    }
+
+    .cake {
+      position: relative;
+      width: min(410px, 92vw);
+      height: 330px;
+      margin: 18px auto 0;
+    }
+
+    .plate {
+      position: absolute;
+      bottom: 20px;
+      left: 9%;
+      width: 82%;
+      height: 17px;
+      border: 2px solid #79584c;
+      border-radius: 50%;
+      background: #f7dfaa;
+    }
+
+    .tier {
+      position: absolute;
+      border: 2px solid #79584c;
+      border-radius: 13px 13px 10px 10px;
+      box-shadow: inset 0 11px var(--icing);
+    }
+
+    .tier::before {
+      position: absolute;
+      top: 19px;
+      right: 0;
+      left: 0;
+      height: 8px;
+      content: "";
+      background: radial-gradient(circle at 12px 4px, var(--icing) 0 4px, transparent 4.5px) 0 0 / 28px 8px repeat-x;
+    }
+
+    .tier--bottom {
+      bottom: 37px;
+      left: 6%;
+      width: 88%;
+      height: 88px;
+      background: var(--coral);
+      background-image: radial-gradient(#ffe3a5 2px, transparent 2.5px);
+      background-position: 8px 39px;
+      background-size: 29px 25px;
+      animation: assemble 650ms cubic-bezier(.2, .8, .2, 1) 200ms both;
+    }
+
+    .tier--middle {
+      bottom: 119px;
+      left: 16%;
+      width: 68%;
+      height: 76px;
+      background: var(--mint);
+      background-image: radial-gradient(#fff1bb 2px, transparent 2.5px);
+      background-position: 12px 41px;
+      background-size: 27px 24px;
+      animation: assemble 650ms cubic-bezier(.2, .8, .2, 1) 950ms both;
+    }
+
+    .tier--top {
+      bottom: 190px;
+      left: 27%;
+      width: 46%;
+      height: 66px;
+      background: #f2bd67;
+      background-image: radial-gradient(#fff8d9 2px, transparent 2.5px);
+      background-position: 8px 38px;
+      background-size: 25px 22px;
+      animation: assemble 650ms cubic-bezier(.2, .8, .2, 1) 1700ms both;
+    }
+
+    .candle {
+      position: absolute;
+      z-index: 2;
+      top: 18px;
+      width: 13px;
+      height: 46px;
+      border: 1px solid #79584c;
+      border-radius: 5px 5px 2px 2px;
+      background: repeating-linear-gradient(135deg, #fff8e9 0 6px, #e87969 6px 9px);
+      animation: assemble 550ms cubic-bezier(.2, .8, .2, 1) 2450ms both;
+    }
+
+    .candle--one { left: 43%; }
+    .candle--two { left: 56%; }
+
+    .flame {
+      position: absolute;
+      top: -25px;
+      left: -3px;
+      width: 17px;
+      height: 24px;
+      border: 1px solid #c85d36;
+      border-radius: 55% 45% 55% 45%;
+      background: var(--yellow);
+      box-shadow: 0 0 18px #f2a54b99;
+      transform: rotate(4deg);
+      transform-origin: center bottom;
+      animation: flicker 360ms ease-in-out infinite alternate;
+    }
+
+    .candle--two .flame {
+      animation-delay: 180ms;
+    }
+
+    @keyframes flicker {
+      from { transform: rotate(-8deg) scale(.88, 1.06); }
+      to { transform: rotate(9deg) scale(1.08, .92); }
+    }
+
+    @keyframes assemble {
+      from { opacity: 0; transform: translateY(34px) scale(.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Happy Birthday!</h1>
+    <p class="wish">Make a wish</p>
+    <div class="cake" role="img" aria-label="A three-tier birthday cake with two flickering candles">
+      <div class="candle candle--one"><span class="flame"></span></div>
+      <div class="candle candle--two"><span class="flame"></span></div>
+      <div class="tier tier--top"></div>
+      <div class="tier tier--middle"></div>
+      <div class="tier tier--bottom"></div>
+      <div class="plate"></div>
+    </div>
+  </main>
+</body>
+</html>
+
